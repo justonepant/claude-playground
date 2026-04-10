@@ -82,7 +82,7 @@ const server = http.createServer((req, res) => {
     }
 
     let payload;
-    try { payload = JSON.parse(body); } catch { res.writeHead(400).end('Bad JSON'); return; }
+    try { payload = JSON.parse(body.toString('utf8')); } catch { res.writeHead(400).end('Bad JSON'); return; }
 
     if (payload.ref !== `refs/heads/${DEPLOY_BRANCH}`) {
       res.writeHead(200).end(`Ignored — not ${DEPLOY_BRANCH}`);
