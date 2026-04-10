@@ -1,0 +1,7 @@
+{
+  "name": "claude-playground",
+  "private": true,
+  "workspaces": [
+    "bike-gear-calc"
+  ]
+}

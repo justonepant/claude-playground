@@ -1,0 +1,6 @@
+{
+  "name": "bike-gear-calc",
+  "version": "1.0.0",
+  "description": "Bicycle gear calculator",
+  "main": "index.js"
+}
