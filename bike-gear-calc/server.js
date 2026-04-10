@@ -3,8 +3,9 @@
 const http = require('http');
 const { gearTable, WHEEL_CIRCUMFERENCES_M } = require('./index');
 
-const PORT = parseInt(process.env.PORT || '3000', 10);
+const PORT       = parseInt(process.env.PORT || '3000', 10);
 const WHEEL_SIZES = Object.keys(WHEEL_CIRCUMFERENCES_M);
+const STARTED_AT  = new Date().toUTCString();
 
 function escapeHtml(str) {
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -50,6 +51,7 @@ function renderPage(params, rows) {
     td { padding: 6px 12px; border-bottom: 1px solid #eee; text-align: right; }
     td:first-child { text-align: left; }
     tr:hover td { background: #fafafa; }
+    footer { margin-top: 2rem; font-size: 0.75rem; color: #999; }
   </style>
 </head>
 <body>
@@ -79,6 +81,7 @@ function renderPage(params, rows) {
     </thead>
     <tbody>${rowsHtml}</tbody>
   </table>
+  <footer>started: ${STARTED_AT}</footer>
 </body>
 </html>`;
 }
