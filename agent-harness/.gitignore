@@ -6,6 +6,12 @@ out
 dist
 *.tgz
 
+# runtime data
+data/
+*.db
+*.db-shm
+*.db-wal
+
 # code coverage
 coverage
 *.lcov
